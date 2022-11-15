@@ -1,0 +1,57 @@
+
+
+- Static abstracts in interfaces
+
+
+
+// Interface specifies static properties and operators
+interface IAddable<T> where T : IAddable<T>
+{
+    static abstract T Zero { get; }
+    static abstract T operator +(T t1, T t2);
+}
+
+
+
+
+
+
+
+
+
+
+- Parameter Null Checking
+
+
+    
+    public static void M(string s)
+    {
+        if (s is null)
+        {
+            throw new ArgumentNullException(nameof(s));
+        }
+        // Body of the method
+    }
+
+    public static void M(string s!!)
+    {
+        // Body of the method
+    }
+
+
+
+
+
+
+
+- Field Keyword
+
+
+public class Test
+{
+    public string PropertyConstraint
+    {
+        get;
+        set => field = value ?? throw new ArgumentNullException();
+    } = "";
+}

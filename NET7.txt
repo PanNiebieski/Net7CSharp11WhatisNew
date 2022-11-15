@@ -1,0 +1,43 @@
+﻿- Regex jest nawet 9 razy szybszy niż wcześniej
+
+- Refleksja jest szybsza
+
+- Linq jest szybsze
+
+- App Trimming czyli mniejszy rozmiar aplikacji
+
+- DateTime jest szybszy o nanosekundy
+
+- Caching w pamięci jest lepszy
+
+- Zmiany w Blazor
+
+- HTTP/2 Performance improvements
+
+- Http/2 WebSockets support
+
+- Kestrel performance improvements on high core machines
+
+- Ulepszenie Minimalnego API
+
+- dotnet watch
+
+- Developer exception page dark mode
+
+- Support for nullable models in MVC views and Razor Pages
+@model Product?
+
+- Parameter binding with DI in API controllers
+
+[Route("[controller]")]
+[ApiController]
+public class MyController : ControllerBase
+{
+    public ActionResult GetWithAttribute
+            ([FromServices] IDateTime dateTime) 
+                    => Ok(dateTime.Now);
+
+    [Route("noAttribute")]
+    public ActionResult Get(IDateTime dateTime) => Ok(dateTime.Now);
+}
+
